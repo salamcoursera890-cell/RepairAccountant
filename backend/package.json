@@ -1,0 +1,19 @@
+{
+  "name": "repair-accountant-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Repair Accountant App",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "mssql": "^11.0.1",
+    "pg": "^8.22.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^10.0.0"
+  }
+}

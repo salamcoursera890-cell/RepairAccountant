@@ -1,0 +1,7 @@
+node_modules/
+.expo/
+dist/
+*.tsbuildinfo
+backend/node_modules/
+backend/data/
+.DS_Store
