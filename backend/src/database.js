@@ -32,9 +32,15 @@ async function getPool() {
 async function query(sqlText, params = {}) {
   const pool = await getPool();
   if (DB_TYPE === 'pg') {
-    const keys = Object.keys(params);
+    const paramMap = {};
     let idx = 1;
-    const pgSql = sqlText.replace(/@(\w+)/g, () => `$${idx++}`);
+    const pgSql = sqlText.replace(/@(\w+)/g, (match, name) => {
+      if (!(name in paramMap)) {
+        paramMap[name] = `$${idx++}`;
+      }
+      return paramMap[name];
+    });
+    const keys = Object.keys(paramMap);
     const values = keys.map((k) => params[k]);
     const result = await pool.query(pgSql, values);
     return { rows: result.rows, recordset: result.rows, count: result.rowCount };

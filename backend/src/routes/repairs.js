@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
     }
 
     const counterRow = await queryOne("SELECT value FROM settings WHERE key = 'repairCounter'");
-    const repairNumber = parseInt(counterRow.value) + 1;
+    const repairNumber = (counterRow ? parseInt(counterRow.value) || 0 : 0) + 1;
     await query("UPDATE settings SET value = @val WHERE key = 'repairCounter'", { val: String(repairNumber) });
 
     const id = uuidv4();

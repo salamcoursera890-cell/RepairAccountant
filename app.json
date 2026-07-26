@@ -27,15 +27,19 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
       "apiUrl": "https://repair-accountant-api.onrender.com/api",
       "eas": {
-        "projectId": ""
-      }
-    }
+        "projectId": "401f7424-0019-4245-a68b-3a177b4699fc"
+      },
+      "router": {}
+    },
+    "owner": "salambta"
   }
 }
