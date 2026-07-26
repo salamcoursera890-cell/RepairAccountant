@@ -4,6 +4,7 @@ services:
     runtime: node
     region: frankfurt
     plan: free
+    rootDir: backend
     buildCommand: npm install
     startCommand: node src/server.js
     envVars:
